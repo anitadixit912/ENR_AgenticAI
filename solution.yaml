@@ -1,0 +1,12 @@
+apiVersion: solution.sap/v1
+kind: Solution
+
+metadata:
+  name: churn-prevention-58f94
+  version: 1.0.0
+  description: "Invisible Exits — AI agent that detects early churn signals in SAP S/4HANA, scores at-risk accounts, and surfaces personalised Joule alerts to sales teams with a full GDPR audit trail."
+
+assets:
+  - ref: ./assets/churn-prevention-agent/asset.yaml
+  - ref: ./assets/account-service-mcp/asset.yaml
+  - ref: ./assets/opportunity-service-mcp/asset.yaml

@@ -1,0 +1,11 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: account-service-mcp
+  ordId: customer.mcpbuilder.c4c:apiResource:account_service:v1
+  version: 1.0.0
+  description: "MCP server for SAP Sales Cloud Account Service — provides account profile and segment data for churn prevention agent enrichment."
+  translation: mcp-translation/translation.json
+
+type: mcp-server
