@@ -1,0 +1,9 @@
+ID,riskEvent_ID,supplierId,supplierName,country,city,poNumbers,poValue,sapTaskId,riskScoreUpdated
+0591aa18-03f1-4688-b610-2052089cc1cf,483d979c-0a63-4225-a327-edc1d489a9b2,SUP001,ACME Eastern Corp,UA,Kyiv,"4500001001,4500001002",175000.0,TASK-001,True
+d5e29487-6ba1-40fd-ac04-03efdbfef4b0,483d979c-0a63-4225-a327-edc1d489a9b2,SUP002,Baltic Steel Ukraine,UA,Kharkiv,"4500001003,4500001004",250000.0,TASK-001,True
+f2f35857-8b4e-4071-9c53-407991871df2,483d979c-0a63-4225-a327-edc1d489a9b2,SUP003,DniproChemicals Ltd,UA,Dnipro,4500001006,0.0,,False
+7c72806f-6a79-45d7-a47f-fc7eaf3a80c6,68cbb72d-97a5-4b6d-8913-b48074ba67a3,SUP004,UralMetal Industries,RU,Yekaterinburg,"4500002001,4500002002",187500.0,TASK-002,True
+eece0099-2234-4433-bffe-bd0f232ca092,68cbb72d-97a5-4b6d-8913-b48074ba67a3,SUP005,Siberian Alloys GmbH,RU,Novosibirsk,4500002003,100000.0,TASK-002,True
+07bf9e56-b068-4a2b-8716-9c3610c67343,d7d60655-7258-4eb5-b509-d01fdd3a16d7,SUP006,Lagos Port Chemicals,NG,Lagos,4500003001,90000.0,TASK-003,True
+b2d37869-0f39-4cd9-a7c9-d5bca6aef6f4,d7d60655-7258-4eb5-b509-d01fdd3a16d7,SUP007,West Africa Raw Materials,NG,Port Harcourt,4500003002,66000.0,TASK-003,False
+ccf0b33e-76b2-470c-bd42-af94002e129a,acfd2cfc-f2da-493c-8bef-b017c4f0368e,SUP008,MedTech Supplies Israel,IL,Tel Aviv,"4500004001,4500004002",95000.0,,False

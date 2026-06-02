@@ -1,0 +1,133 @@
+{
+    "mcpTranslationVersion": "0.1",
+    "target": {
+        "ordId": "sap.s4:apiResource:API_BUSINESS_PARTNER:v1",
+        "type": "openapi-v3"
+    },
+    "serverInfo": {
+        "name": "sap.mcp/business_partner_supplier_data",
+        "title": "business_partner_supplier_data",
+        "version": "1.0.0",
+        "description": "MCP server for the business_partner_supplier_data service."
+    },
+    "tools": [
+        {
+            "name": "listSuppliers",
+            "title": "listSuppliers",
+            "description": "Retrieve a list of suppliers (business partners with supplier role)",
+            "openApiType": {
+                "path": "/A_Supplier",
+                "method": "get",
+                "operationId": "listSuppliers",
+                "parameters": [
+                    {
+                        "name": "$top",
+                        "description": "Limit number of results",
+                        "in": "query",
+                        "newParameterName": "top"
+                    },
+                    {
+                        "name": "$skip",
+                        "description": "Skip first N results",
+                        "in": "query",
+                        "newParameterName": "skip"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "OData filter expression",
+                        "in": "query",
+                        "newParameterName": "filter"
+                    },
+                    {
+                        "name": "$select",
+                        "description": "Comma-separated list of properties to return",
+                        "in": "query",
+                        "newParameterName": "select"
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "Expand navigation properties",
+                        "in": "query",
+                        "newParameterName": "expand"
+                    }
+                ],
+                "requestBody": {}
+            }
+        },
+        {
+            "name": "getSupplier",
+            "title": "getSupplier",
+            "description": "Retrieve details for a specific supplier",
+            "openApiType": {
+                "path": "/A_Supplier('{Supplier}')",
+                "method": "get",
+                "operationId": "getSupplier",
+                "parameters": [
+                    {
+                        "name": "Supplier",
+                        "description": "Supplier (vendor) number",
+                        "in": "path",
+                        "newParameterName": "supplier"
+                    }
+                ],
+                "requestBody": {}
+            }
+        },
+        {
+            "name": "listBusinessPartners",
+            "title": "listBusinessPartners",
+            "description": "Retrieve business partners, optionally filtered by country/region",
+            "openApiType": {
+                "path": "/A_BusinessPartner",
+                "method": "get",
+                "operationId": "listBusinessPartners",
+                "parameters": [
+                    {
+                        "name": "$top",
+                        "description": "",
+                        "in": "query",
+                        "newParameterName": "top"
+                    },
+                    {
+                        "name": "$filter",
+                        "description": "e.g. Country eq 'UA'",
+                        "in": "query",
+                        "newParameterName": "filter"
+                    },
+                    {
+                        "name": "$select",
+                        "description": "",
+                        "in": "query",
+                        "newParameterName": "select"
+                    },
+                    {
+                        "name": "$expand",
+                        "description": "",
+                        "in": "query",
+                        "newParameterName": "expand"
+                    }
+                ],
+                "requestBody": {}
+            }
+        },
+        {
+            "name": "getBusinessPartner",
+            "title": "getBusinessPartner",
+            "description": "Get business partner by ID",
+            "openApiType": {
+                "path": "/A_BusinessPartner('{BusinessPartner}')",
+                "method": "get",
+                "operationId": "getBusinessPartner",
+                "parameters": [
+                    {
+                        "name": "BusinessPartner",
+                        "description": "",
+                        "in": "path",
+                        "newParameterName": "businesspartner"
+                    }
+                ],
+                "requestBody": {}
+            }
+        }
+    ]
+}

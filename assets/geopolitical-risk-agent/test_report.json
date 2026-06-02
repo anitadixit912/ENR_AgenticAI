@@ -1,0 +1,493 @@
+{
+  "summary": {
+    "total": 90,
+    "passed": 90,
+    "failed": 0,
+    "score": 100.0
+  },
+  "sections": [
+    {
+      "name": "Structure Tests",
+      "marker": "structure",
+      "total": 3,
+      "passed": 3,
+      "failed": 0,
+      "skipped": 0,
+      "score": 100.0,
+      "tests": [
+        {
+          "name": "test_agent_directory_exists",
+          "outcome": "passed",
+          "duration": 0.0003
+        },
+        {
+          "name": "test_app_directory_exists",
+          "outcome": "passed",
+          "duration": 0.0002
+        },
+        {
+          "name": "test_requirements_txt_exists",
+          "outcome": "passed",
+          "duration": 0.0002
+        }
+      ]
+    },
+    {
+      "name": "Server Tests",
+      "marker": "server",
+      "total": 0,
+      "passed": 0,
+      "failed": 0,
+      "skipped": 0,
+      "score": 0.0,
+      "tests": []
+    },
+    {
+      "name": "Agent Tests",
+      "marker": "agent_tests",
+      "total": 87,
+      "passed": 87,
+      "failed": 0,
+      "skipped": 0,
+      "score": 100.0,
+      "tests": [
+        {
+          "name": "test_agent_full_pipeline_scheduled_run",
+          "outcome": "passed",
+          "duration": 0.4371
+        },
+        {
+          "name": "test_agent_handles_empty_signals",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_validate_aicore_credentials_all_present",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_validate_aicore_credentials_some_missing",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_validate_aicore_credentials_all_missing",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_log_aicore_status_ok",
+          "outcome": "passed",
+          "duration": 0.001
+        },
+        {
+          "name": "test_log_aicore_status_missing",
+          "outcome": "passed",
+          "duration": 0.001
+        },
+        {
+          "name": "test_build_llm_raises_when_missing",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_build_llm_success",
+          "outcome": "passed",
+          "duration": 5.2429
+        },
+        {
+          "name": "test_create_task_high_severity",
+          "outcome": "passed",
+          "duration": 0.0025
+        },
+        {
+          "name": "test_create_task_skipped_for_low_severity",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_create_task_skipped_for_medium_severity",
+          "outcome": "passed",
+          "duration": 0.0007
+        },
+        {
+          "name": "test_create_task_critical_severity",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_fetch_gdelt_events_success",
+          "outcome": "passed",
+          "duration": 0.0024
+        },
+        {
+          "name": "test_fetch_gdelt_events_filters_by_region",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_fetch_gdelt_events_handles_api_error",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_fetch_gdelt_events_caps_at_500",
+          "outcome": "passed",
+          "duration": 0.0048
+        },
+        {
+          "name": "test_fetch_news_no_api_key",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_fetch_news_returns_articles",
+          "outcome": "passed",
+          "duration": 0.0023
+        },
+        {
+          "name": "test_fetch_news_region_filter_applied",
+          "outcome": "passed",
+          "duration": 0.0023
+        },
+        {
+          "name": "test_fetch_news_global_skips_filter",
+          "outcome": "passed",
+          "duration": 0.0023
+        },
+        {
+          "name": "test_fetch_news_network_error_returns_empty",
+          "outcome": "passed",
+          "duration": 0.002
+        },
+        {
+          "name": "test_fetch_news_empty_articles_key",
+          "outcome": "passed",
+          "duration": 0.0025
+        },
+        {
+          "name": "test_fetch_news_default_lookback",
+          "outcome": "passed",
+          "duration": 0.0022
+        },
+        {
+          "name": "test_get_open_pos_success",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_get_open_pos_no_tool",
+          "outcome": "passed",
+          "duration": 0.0013
+        },
+        {
+          "name": "test_get_open_pos_empty_suppliers",
+          "outcome": "passed",
+          "duration": 0.0017
+        },
+        {
+          "name": "test_get_suppliers_by_region_success",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_get_suppliers_by_region_no_mcp_tool",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_get_suppliers_by_region_empty_codes",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_get_mcp_tools_returns_mock_tools",
+          "outcome": "passed",
+          "duration": 0.0029
+        },
+        {
+          "name": "test_get_mcp_tools_missing_mock_file",
+          "outcome": "passed",
+          "duration": 0.0009
+        },
+        {
+          "name": "test_get_mcp_tools_invalid_json",
+          "outcome": "passed",
+          "duration": 0.003
+        },
+        {
+          "name": "test_mock_tools_all_field_types",
+          "outcome": "passed",
+          "duration": 0.0025
+        },
+        {
+          "name": "test_mock_tool_returns_mock_response",
+          "outcome": "passed",
+          "duration": 0.0032
+        },
+        {
+          "name": "test_get_mcp_tools_production_mcp_client_failure",
+          "outcome": "passed",
+          "duration": 0.0048
+        },
+        {
+          "name": "test_persist_success",
+          "outcome": "passed",
+          "duration": 0.003
+        },
+        {
+          "name": "test_persist_handles_failure",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_persist_uses_odata_v4_endpoint",
+          "outcome": "passed",
+          "duration": 0.0021
+        },
+        {
+          "name": "test_persist_calculates_total_po_value",
+          "outcome": "passed",
+          "duration": 0.0022
+        },
+        {
+          "name": "test_persist_includes_recommendations_in_payload",
+          "outcome": "passed",
+          "duration": 0.0022
+        },
+        {
+          "name": "test_persist_recommendations_defaults_to_empty_array_when_missing",
+          "outcome": "passed",
+          "duration": 0.0021
+        },
+        {
+          "name": "test_create_task_skipped_for_low_severity",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_create_task_skipped_for_medium_severity",
+          "outcome": "passed",
+          "duration": 0.0007
+        },
+        {
+          "name": "test_create_task_high_severity_success",
+          "outcome": "passed",
+          "duration": 0.002
+        },
+        {
+          "name": "test_create_task_critical_severity_uses_priority_1",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_create_task_no_mcp_tool_found",
+          "outcome": "passed",
+          "duration": 0.0014
+        },
+        {
+          "name": "test_create_task_mcp_exception",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_update_risk_score_skipped_for_low",
+          "outcome": "passed",
+          "duration": 0.0009
+        },
+        {
+          "name": "test_update_risk_score_skipped_for_medium",
+          "outcome": "passed",
+          "duration": 0.0007
+        },
+        {
+          "name": "test_update_risk_score_high_success",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_update_risk_score_critical_maps_to_4",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_update_risk_score_no_mcp_tool",
+          "outcome": "passed",
+          "duration": 0.0017
+        },
+        {
+          "name": "test_update_risk_score_mcp_exception",
+          "outcome": "passed",
+          "duration": 0.0016
+        },
+        {
+          "name": "test_score_risk_llm_success",
+          "outcome": "passed",
+          "duration": 0.0019
+        },
+        {
+          "name": "test_score_risk_llm_fallback_on_error",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_score_risk_no_suppliers",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_score_risk_returns_valid_severity",
+          "outcome": "passed",
+          "duration": 0.0021
+        },
+        {
+          "name": "test_score_risk_llm_returns_recommendations",
+          "outcome": "passed",
+          "duration": 0.0017
+        },
+        {
+          "name": "test_score_risk_rule_based_fallback_returns_recommendations",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_score_risk_high_severity_recommendations",
+          "outcome": "passed",
+          "duration": 0.0017
+        },
+        {
+          "name": "test_score_risk_low_severity_has_recommendations",
+          "outcome": "passed",
+          "duration": 0.0011
+        },
+        {
+          "name": "test_send_email_skipped_low_severity",
+          "outcome": "passed",
+          "duration": 0.001
+        },
+        {
+          "name": "test_send_email_skipped_medium_severity",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_send_email_no_recipients",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_send_email_via_btp_ans_critical",
+          "outcome": "passed",
+          "duration": 0.0033
+        },
+        {
+          "name": "test_send_email_via_btp_ans_high",
+          "outcome": "passed",
+          "duration": 0.0028
+        },
+        {
+          "name": "test_send_email_btp_ans_oauth_fails_then_smtp_fallback",
+          "outcome": "passed",
+          "duration": 0.0179
+        },
+        {
+          "name": "test_send_email_btp_ans_event_post_fails_then_smtp_fallback",
+          "outcome": "passed",
+          "duration": 0.0046
+        },
+        {
+          "name": "test_send_email_via_smtp_only",
+          "outcome": "passed",
+          "duration": 0.0062
+        },
+        {
+          "name": "test_send_email_no_service_configured",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_send_email_includes_recommendations_block_for_critical",
+          "outcome": "passed",
+          "duration": 0.0035
+        },
+        {
+          "name": "test_send_email_via_smtp_includes_recommendations",
+          "outcome": "passed",
+          "duration": 0.0046
+        },
+        {
+          "name": "test_send_email_no_recommendations_section_when_empty",
+          "outcome": "passed",
+          "duration": 0.0031
+        },
+        {
+          "name": "test_send_email_low_severity_not_sent_even_with_recommendations",
+          "outcome": "passed",
+          "duration": 0.0008
+        },
+        {
+          "name": "test_suppliers_list_response",
+          "outcome": "passed",
+          "duration": 0.1193
+        },
+        {
+          "name": "test_suppliers_mcp_exception_returns_empty",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_suppliers_multiple_countries",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_suppliers_no_mcp_tool_returns_empty",
+          "outcome": "passed",
+          "duration": 0.0013
+        },
+        {
+          "name": "test_pos_success",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_pos_no_tool_returns_empty",
+          "outcome": "passed",
+          "duration": 0.0013
+        },
+        {
+          "name": "test_pos_list_response",
+          "outcome": "passed",
+          "duration": 0.0018
+        },
+        {
+          "name": "test_pos_exception_returns_empty",
+          "outcome": "passed",
+          "duration": 0.0015
+        },
+        {
+          "name": "test_update_high_severity",
+          "outcome": "passed",
+          "duration": 0.0017
+        },
+        {
+          "name": "test_update_skipped_low_severity",
+          "outcome": "passed",
+          "duration": 0.0007
+        },
+        {
+          "name": "test_update_skipped_medium_severity",
+          "outcome": "passed",
+          "duration": 0.0007
+        },
+        {
+          "name": "test_update_no_tool",
+          "outcome": "passed",
+          "duration": 0.0013
+        }
+      ],
+      "coverage": 87.2
+    }
+  ]
+}

@@ -1,0 +1,239 @@
+[
+  {
+    "name": "send_alert_email",
+    "description": "Send email alert to procurement managers for High/Critical risk events.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "recipients": {
+          "type": "array",
+          "description": "List of email addresses"
+        },
+        "event_title": {
+          "type": "string",
+          "description": "Short event headline"
+        },
+        "severity": {
+          "type": "string",
+          "description": "Risk severity (Low/Medium/High/Critical)"
+        },
+        "affected_suppliers": {
+          "type": "array",
+          "description": "List of affected supplier dicts"
+        },
+        "affected_po_count": {
+          "type": "integer",
+          "description": "Number of open POs affected"
+        },
+        "total_po_value": {
+          "type": "number",
+          "description": "Total value of affected POs"
+        },
+        "dashboard_url": {
+          "type": "string",
+          "description": "URL to the risk dashboard"
+        }
+      },
+      "required": [
+        "recipients",
+        "event_title",
+        "severity",
+        "affected_suppliers",
+        "affected_po_count",
+        "total_po_value",
+        "dashboard_url"
+      ]
+    }
+  },
+  {
+    "name": "fetch_gdelt_events",
+    "description": "Fetch and filter geopolitical events from GDELT API v2.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "regions": {
+          "type": "array",
+          "description": "List of region keys to monitor (e.g. ['middle_east_africa', 'eastern_europe', 'global'])"
+        },
+        "themes": {
+          "type": "array",
+          "description": "List of CAMEO conflict themes to filter by (e.g. ['CONFLICT', 'MILITARY_ATTACK'])"
+        },
+        "lookback_minutes": {
+          "type": "integer",
+          "description": "Number of minutes to look back for events (default: 60)"
+        }
+      },
+      "required": [
+        "regions",
+        "themes"
+      ]
+    }
+  },
+  {
+    "name": "persist_risk_event",
+    "description": "Persist a scored risk event to the CAP OData service (HANA Cloud).",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "event_data": {
+          "type": "object",
+          "description": "Raw event dict from GDELT"
+        },
+        "risk_score": {
+          "type": "object",
+          "description": "Score dict from score_risk tool"
+        },
+        "affected_suppliers": {
+          "type": "array",
+          "description": "List of affected supplier dicts"
+        },
+        "affected_pos": {
+          "type": "array",
+          "description": "List of affected PO dicts"
+        },
+        "task_ids": {
+          "type": "array",
+          "description": "List of SAP task IDs created for this event"
+        }
+      },
+      "required": [
+        "event_data",
+        "risk_score",
+        "affected_suppliers",
+        "affected_pos",
+        "task_ids"
+      ]
+    }
+  },
+  {
+    "name": "score_risk",
+    "description": "Score the risk severity of a geopolitical event against affected SAP suppliers and POs.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "event": {
+          "type": "object",
+          "description": "Dict with event_id, headline, date, source_country, themes, tone_score"
+        },
+        "affected_suppliers": {
+          "type": "array",
+          "description": "List of supplier dicts from get_suppliers_by_region"
+        },
+        "affected_pos": {
+          "type": "array",
+          "description": "List of PO dicts from get_open_pos_by_supplier"
+        }
+      },
+      "required": [
+        "event",
+        "affected_suppliers",
+        "affected_pos"
+      ]
+    }
+  },
+  {
+    "name": "create_sap_procurement_task",
+    "description": "Create a procurement review task in SAP S/4HANA for a high-risk geopolitical event.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "supplier_id": {
+          "type": "string",
+          "description": "SAP supplier ID"
+        },
+        "supplier_name": {
+          "type": "string",
+          "description": "Supplier display name"
+        },
+        "po_numbers": {
+          "type": "array",
+          "description": "List of affected PO numbers"
+        },
+        "event_summary": {
+          "type": "string",
+          "description": "Short event description (max 200 chars)"
+        },
+        "severity": {
+          "type": "string",
+          "description": "Risk severity (Low/Medium/High/Critical)"
+        },
+        "event_date": {
+          "type": "string",
+          "description": "Event date string"
+        }
+      },
+      "required": [
+        "supplier_id",
+        "supplier_name",
+        "po_numbers",
+        "event_summary",
+        "severity",
+        "event_date"
+      ]
+    }
+  },
+  {
+    "name": "update_supplier_risk_score",
+    "description": "Update the risk profile for a SAP supplier based on a geopolitical event.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "supplier_id": {
+          "type": "string",
+          "description": "SAP supplier ID"
+        },
+        "severity": {
+          "type": "string",
+          "description": "Risk severity (Low/Medium/High/Critical)"
+        },
+        "event_ref": {
+          "type": "string",
+          "description": "Event identifier for audit trail"
+        },
+        "justification": {
+          "type": "string",
+          "description": "AI-generated justification for the score"
+        }
+      },
+      "required": [
+        "supplier_id",
+        "severity",
+        "event_ref",
+        "justification"
+      ]
+    }
+  },
+  {
+    "name": "get_suppliers_by_region",
+    "description": "Retrieve active SAP suppliers located in the given country codes via MCP.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "country_codes": {
+          "type": "array",
+          "description": "List of ISO country codes (e.g. ['UA', 'RU', 'IL'])"
+        }
+      },
+      "required": [
+        "country_codes"
+      ]
+    }
+  },
+  {
+    "name": "get_open_pos_by_supplier",
+    "description": "Retrieve open purchase orders for the given supplier IDs via MCP.",
+    "parameters": {
+      "type": "object",
+      "properties": {
+        "supplier_ids": {
+          "type": "array",
+          "description": "List of SAP supplier IDs"
+        }
+      },
+      "required": [
+        "supplier_ids"
+      ]
+    }
+  }
+]

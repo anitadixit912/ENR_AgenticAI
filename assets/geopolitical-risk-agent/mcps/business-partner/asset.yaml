@@ -1,0 +1,12 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: business-partner-mcp
+  version: 1.0.0
+
+type: mcp-server
+
+mcpServer:
+  translationFile: translation.json
+  apiOrdId: sap.s4:apiResource:API_BUSINESS_PARTNER:v1

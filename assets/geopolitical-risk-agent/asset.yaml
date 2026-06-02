@@ -1,0 +1,32 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: geopolitical-risk-agent
+  version: 1.0.0
+
+type: agent
+
+container:
+  buildPath: .
+  port: 5000
+
+probes:
+  startup:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 10
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 24
+  liveness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 30
+    periodSeconds: 15
+    timeoutSeconds: 5
+    failureThreshold: 3
+  readiness:
+    path: /.well-known/agent.json
+    initialDelaySeconds: 20
+    periodSeconds: 10
+    timeoutSeconds: 5
+    failureThreshold: 3

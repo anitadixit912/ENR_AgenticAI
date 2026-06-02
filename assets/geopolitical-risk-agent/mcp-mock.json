@@ -1,0 +1,99 @@
+{
+  "servers": {
+    "business-partner": {
+      "tools": {
+        "BusinessPartner_get": {
+          "description": "Get business partner (supplier) data from SAP S/4HANA",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"},
+              "$top":    {"type": "integer"}
+            }
+          },
+          "mock_response": {
+            "value": [
+              {"BusinessPartner": "SUP001", "BusinessPartnerFullName": "ACME Eastern Corp",     "BusinessPartnerCountry": "UA", "CityName": "Kyiv",         "PostalCode": "01001"},
+              {"BusinessPartner": "SUP002", "BusinessPartnerFullName": "Baltic Steel Ltd",       "BusinessPartnerCountry": "UA", "CityName": "Lviv",         "PostalCode": "79000"},
+              {"BusinessPartner": "SUP003", "BusinessPartnerFullName": "DniproChemicals Ltd",    "BusinessPartnerCountry": "UA", "CityName": "Dnipro",       "PostalCode": "49000"},
+              {"BusinessPartner": "SUP004", "BusinessPartnerFullName": "UralMetal Industries",   "BusinessPartnerCountry": "RU", "CityName": "Yekaterinburg","PostalCode": "620000"},
+              {"BusinessPartner": "SUP005", "BusinessPartnerFullName": "MedTech Supplies Israel","BusinessPartnerCountry": "IL", "CityName": "Tel Aviv",     "PostalCode": "6100001"},
+              {"BusinessPartner": "SUP006", "BusinessPartnerFullName": "Lagos Port Chemicals",   "BusinessPartnerCountry": "NG", "CityName": "Lagos",        "PostalCode": "100001"}
+            ]
+          }
+        }
+      }
+    },
+    "purchase-order": {
+      "tools": {
+        "PurchaseOrder_get": {
+          "description": "Get open purchase orders from SAP S/4HANA",
+          "input_schema": {
+            "type": "object",
+            "properties": {
+              "$filter": {"type": "string"},
+              "$select": {"type": "string"},
+              "$top":    {"type": "integer"}
+            }
+          },
+          "mock_response": {
+            "value": [
+              {"PurchaseOrder": "4500001001", "Supplier": "SUP001", "Material": "RAW-STEEL-001", "NetPriceAmount": "125000", "DocumentCurrency": "USD", "Plant": "1000"},
+              {"PurchaseOrder": "4500001002", "Supplier": "SUP001", "Material": "STEEL-ROD-004", "NetPriceAmount": "50000",  "DocumentCurrency": "USD", "Plant": "1000"},
+              {"PurchaseOrder": "4500001003", "Supplier": "SUP002", "Material": "CHEM-ACID-003", "NetPriceAmount": "87500",  "DocumentCurrency": "USD", "Plant": "2000"},
+              {"PurchaseOrder": "4500001004", "Supplier": "SUP002", "Material": "STEEL-BEAM-010","NetPriceAmount": "162500", "DocumentCurrency": "USD", "Plant": "2000"},
+              {"PurchaseOrder": "4500002001", "Supplier": "SUP004", "Material": "METAL-ORE-002", "NetPriceAmount": "187500", "DocumentCurrency": "USD", "Plant": "3000"},
+              {"PurchaseOrder": "4500003001", "Supplier": "SUP005", "Material": "MED-COMPONENT", "NetPriceAmount": "95000",  "DocumentCurrency": "USD", "Plant": "4000"},
+              {"PurchaseOrder": "4500004001", "Supplier": "SUP006", "Material": "CHEM-SOL-007",  "NetPriceAmount": "66000",  "DocumentCurrency": "USD", "Plant": "5000"}
+            ]
+          }
+        }
+      }
+    },
+    "procurement-task": {
+      "tools": {
+        "SupplierActivityTask_create": {
+          "description": "Create a supplier activity / procurement task in SAP S/4HANA",
+          "input_schema": {
+            "type": "object",
+            "required": ["Supplier", "TaskType", "Description"],
+            "properties": {
+              "Supplier":    {"type": "string"},
+              "TaskType":    {"type": "string"},
+              "Description": {"type": "string"},
+              "DueDate":     {"type": "string"},
+              "Priority":    {"type": "string"},
+              "Status":      {"type": "string"}
+            }
+          },
+          "mock_response": {
+            "SupplierActivityTask": "TASK-MOCK-001",
+            "Status": "OPEN"
+          }
+        },
+        "SupplierRisk_update": {
+          "description": "Update supplier risk profile in SAP S/4HANA",
+          "input_schema": {
+            "type": "object",
+            "required": ["Supplier", "RiskScore"],
+            "properties": {
+              "Supplier":        {"type": "string"},
+              "RiskScore":       {"type": "integer"},
+              "RiskCategory":    {"type": "string"},
+              "RiskDescription": {"type": "string"},
+              "EventReference":  {"type": "string"},
+              "AssessmentDate":  {"type": "string"}
+            }
+          },
+          "mock_response": {
+            "Supplier": "SUP001",
+            "PreviousRiskScore": 2,
+            "NewRiskScore": 3,
+            "Status": "UPDATED"
+          }
+        }
+      }
+    }
+  }
+}

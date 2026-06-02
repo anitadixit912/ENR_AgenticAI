@@ -1,0 +1,30 @@
+apiVersion: asset.sap/v1
+kind: Asset
+
+metadata:
+  name: geopolitical-risk-cap
+  version: 1.0.0
+
+type: cap-app
+
+components:
+  - name: srv
+    buildPath: .
+    outputPath: gen/srv
+    provides:
+      endpoints:
+        - path: /odata/v4
+          port: 4004
+          protocol: http
+      protocols: [odata-v4, rest]
+    port: 4004
+    requires:
+      - name: hdi-container
+  - name: hdi-deployer
+    type: hdi-deployer
+    buildPath: .
+    outputPath: gen/db
+    requires:
+      - hdi-container
+    custom:
+      lifecycle: init

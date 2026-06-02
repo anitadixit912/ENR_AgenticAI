@@ -1,0 +1,316 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Business Partner - Supplier Data",
+    "version": "1.0.0",
+    "description": "Retrieve business partner supplier information from SAP S/4HANA"
+  },
+  "servers": [
+    {
+      "url": "https://{host}/sap/opu/odata/sap/API_BUSINESS_PARTNER",
+      "variables": {
+        "host": {
+          "default": ""
+        }
+      }
+    }
+  ],
+  "paths": {
+    "/A_Supplier": {
+      "get": {
+        "operationId": "listSuppliers",
+        "summary": "Get list of suppliers",
+        "description": "Retrieve a list of suppliers (business partners with supplier role)",
+        "parameters": [
+          {
+            "name": "$top",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Limit number of results"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            },
+            "description": "Skip first N results"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "OData filter expression"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Comma-separated list of properties to return"
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "Expand navigation properties"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Supplier list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/A_Supplier('{Supplier}')": {
+      "get": {
+        "operationId": "getSupplier",
+        "summary": "Get supplier by ID",
+        "description": "Retrieve details for a specific supplier",
+        "parameters": [
+          {
+            "name": "Supplier",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            },
+            "description": "Supplier (vendor) number"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Supplier details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/SupplierResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/A_BusinessPartner": {
+      "get": {
+        "operationId": "listBusinessPartners",
+        "summary": "Get list of business partners",
+        "description": "Retrieve business partners, optionally filtered by country/region",
+        "parameters": [
+          {
+            "name": "$top",
+            "in": "query",
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            },
+            "description": "e.g. Country eq 'UA'"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "$expand",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Business partner list",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessPartnerListResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/A_BusinessPartner('{BusinessPartner}')": {
+      "get": {
+        "operationId": "getBusinessPartner",
+        "summary": "Get business partner by ID",
+        "parameters": [
+          {
+            "name": "BusinessPartner",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Business partner details",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/BusinessPartnerResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "Supplier": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string",
+            "description": "Supplier account number"
+          },
+          "AccountGroup": {
+            "type": "string"
+          },
+          "IsVendorBlockedForPosting": {
+            "type": "boolean"
+          },
+          "IsCentrallyBlocked": {
+            "type": "boolean"
+          },
+          "IsOneTimeAccount": {
+            "type": "boolean"
+          },
+          "CreationDate": {
+            "type": "string",
+            "format": "date"
+          },
+          "CreatedByUser": {
+            "type": "string"
+          },
+          "to_SupplierCompany": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/SupplierCompany"
+            }
+          }
+        }
+      },
+      "SupplierCompany": {
+        "type": "object",
+        "properties": {
+          "Supplier": {
+            "type": "string"
+          },
+          "CompanyCode": {
+            "type": "string"
+          },
+          "ReconciliationAccount": {
+            "type": "string"
+          },
+          "PaymentBlockingReason": {
+            "type": "string"
+          }
+        }
+      },
+      "BusinessPartner": {
+        "type": "object",
+        "properties": {
+          "BusinessPartner": {
+            "type": "string",
+            "description": "Business partner number"
+          },
+          "BusinessPartnerFullName": {
+            "type": "string"
+          },
+          "BusinessPartnerName": {
+            "type": "string"
+          },
+          "Country": {
+            "type": "string",
+            "description": "ISO 2-letter country code"
+          },
+          "Region": {
+            "type": "string"
+          },
+          "CityName": {
+            "type": "string"
+          },
+          "PostalCode": {
+            "type": "string"
+          },
+          "BusinessPartnerType": {
+            "type": "string"
+          },
+          "BPIsBlocked": {
+            "type": "boolean"
+          }
+        }
+      },
+      "SupplierListResponse": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Supplier"
+            }
+          }
+        }
+      },
+      "SupplierResponse": {
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/Supplier"
+          }
+        }
+      },
+      "BusinessPartnerListResponse": {
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/BusinessPartner"
+            }
+          }
+        }
+      },
+      "BusinessPartnerResponse": {
+        "type": "object",
+        "properties": {
+          "d": {
+            "$ref": "#/components/schemas/BusinessPartner"
+          }
+        }
+      }
+    }
+  }
+}

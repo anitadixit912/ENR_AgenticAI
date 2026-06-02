@@ -1,0 +1,21 @@
+requirements:
+  agent_response_requirements:
+    - 'Agent summarises the number of events processed, severity distribution, tasks created, and suppliers updated in its final run report.'
+    - 'Agent explains the justification for every High or Critical severity score in plain language so procurement managers understand the reasoning.'
+    - 'Agent clearly communicates when a step fails (e.g. SAP task creation error) and confirms which fallback actions were taken (e.g. email-only dispatch).'
+
+  tool_requirements:
+    - 'Agent always calls fetch_gdelt_events before get_suppliers_by_region, since country codes are derived from event data.'
+    - 'Agent calls get_open_pos_by_supplier only after get_suppliers_by_region has returned at least one supplier_id.'
+    - 'Agent calls score_risk with event, affected_suppliers, and affected_pos all populated before calling create_sap_procurement_task or update_supplier_risk_score.'
+    - 'Agent calls create_sap_procurement_task and update_supplier_risk_score only when score_risk returns severity of High or Critical — never for Low or Medium events.'
+    - 'Agent calls send_alert_email with all required parameters (recipients, event_title, severity, affected_suppliers, affected_po_count, total_po_value, dashboard_url) before completing the run.'
+    - 'Agent calls persist_risk_event after scoring and all SAP writes so the persisted record includes task_ids and risk score.'
+
+  rule_compliance_requirements:
+    - 'WHEN score_risk returns severity of Low or Medium, the agent MUST NOT call create_sap_procurement_task or update_supplier_risk_score.'
+    - 'WHEN a SAP API call fails, the agent MUST log the failure, continue to the email dispatch step, and include the failure in the run summary.'
+    - 'WHEN fetch_gdelt_events and fetch_news_articles both return empty lists, the agent MUST exit early with events_processed=0 and MUST NOT call any SAP write tools.'
+    - 'WHEN score_risk LLM inference fails, the agent MUST fall back to rule-based CAMEO scoring and note the fallback in the justification field.'
+    - 'WHEN a Critical event is detected, the agent MUST call both create_sap_procurement_task and update_supplier_risk_score in the same run before completing.'
+    - 'WHEN persist_risk_event is called, the agent MUST include all task_ids generated in the current run so the audit trail is complete.'

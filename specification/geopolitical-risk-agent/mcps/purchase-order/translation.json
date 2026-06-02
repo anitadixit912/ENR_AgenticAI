@@ -1,0 +1,3711 @@
+{
+  "mcpTranslationVersion": "0.1",
+  "target": {
+    "ordId": "sap.s4:apiResource:API_PURCHASEORDER_2:v1",
+    "type": "openapi-v3"
+  },
+  "serverInfo": {
+    "name": "sap.mcp/purchase_order",
+    "title": "purchase_order",
+    "version": "1.0.0",
+    "description": "MCP server for the purchase_order service."
+  },
+  "tools": [
+    {
+      "name": "GET_POSubcontractingComponent",
+      "title": "GET_POSubcontractingComponent",
+      "description": "Get entities from POSubcontractingComponent",
+      "openApiType": {
+        "path": "/POSubcontractingComponent",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "title": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "description": "Get entity from POSubcontractingComponent by key",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "title": "DELETE_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "description": "Delete entity from POSubcontractingComponent",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "title": "PATCH_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType",
+      "description": "Update entity in POSubcontractingComponent",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_PurchaseOrder",
+      "title": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_PurchaseOrderItem",
+      "title": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_ScheduleLine",
+      "title": "GET_POSubcontractingComponent_PurchaseOrder_PurchaseOrderItem_ScheduleLine_ReservationItem_RecordType_ScheduleLine",
+      "description": "Get related _ScheduleLine",
+      "openApiType": {
+        "path": "/POSubcontractingComponent/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/{ReservationItem}/{RecordType}/_ScheduleLine",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Purchasing Document Item",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "ReservationItem",
+            "description": "Reservation Item",
+            "in": "path",
+            "newParameterName": "reservationitem"
+          },
+          {
+            "name": "RecordType",
+            "description": "Reservation Record Type",
+            "in": "path",
+            "newParameterName": "recordtype"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrder",
+      "title": "GET_PurchaseOrder",
+      "description": "Get entities from PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrder",
+      "title": "POST_PurchaseOrder",
+      "description": "Add new entity to PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrder",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrder_PurchaseOrder",
+      "title": "GET_PurchaseOrder_PurchaseOrder",
+      "description": "Get entity from PurchaseOrder by key",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrder_PurchaseOrder",
+      "title": "DELETE_PurchaseOrder_PurchaseOrder",
+      "description": "Delete entity from PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrder_PurchaseOrder",
+      "title": "PATCH_PurchaseOrder_PurchaseOrder",
+      "description": "Update entity in PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrder_PurchaseOrder_SAPselfGetOutputBinaryData__",
+      "title": "GET_PurchaseOrder_PurchaseOrder_SAPselfGetOutputBinaryData__",
+      "description": "Invoke function GetOutputBinaryData",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/SAP__self.GetOutputBinaryData()",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrder_PurchaseOrder_PurchaseOrderItem",
+      "title": "GET_PurchaseOrder_PurchaseOrder_PurchaseOrderItem",
+      "description": "Get entities from related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderItem",
+      "title": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderItem",
+      "description": "Add new entity to related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/_PurchaseOrderItem",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrder_PurchaseOrder_PurchaseOrderNote",
+      "title": "GET_PurchaseOrder_PurchaseOrder_PurchaseOrderNote",
+      "description": "Get entities from related _PurchaseOrderNote",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/_PurchaseOrderNote",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderNote",
+      "title": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderNote",
+      "description": "Add new entity to related _PurchaseOrderNote",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/_PurchaseOrderNote",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderPartner",
+      "title": "POST_PurchaseOrder_PurchaseOrder_PurchaseOrderPartner",
+      "description": "Add new entity to related _PurchaseOrderPartner",
+      "openApiType": {
+        "path": "/PurchaseOrder/{PurchaseOrder}/_PurchaseOrderPartner",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderAccountAssignment",
+      "title": "GET_PurchaseOrderAccountAssignment",
+      "description": "Get entities from PurchaseOrderAccountAssignment",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "title": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "description": "Get entity from PurchaseOrderAccountAssignment by key",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment/{PurchaseOrder}/{PurchaseOrderItem}/{AccountAssignmentNumber}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "AccountAssignmentNumber",
+            "description": "Sequential Number of Account Assignment",
+            "in": "path",
+            "newParameterName": "accountassignmentnumber"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "title": "DELETE_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "description": "Delete entity from PurchaseOrderAccountAssignment",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment/{PurchaseOrder}/{PurchaseOrderItem}/{AccountAssignmentNumber}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "AccountAssignmentNumber",
+            "description": "Sequential Number of Account Assignment",
+            "in": "path",
+            "newParameterName": "accountassignmentnumber"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "title": "PATCH_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber",
+      "description": "Update entity in PurchaseOrderAccountAssignment",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment/{PurchaseOrder}/{PurchaseOrderItem}/{AccountAssignmentNumber}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "AccountAssignmentNumber",
+            "description": "Sequential Number of Account Assignment",
+            "in": "path",
+            "newParameterName": "accountassignmentnumber"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber_PurchaseOrder",
+      "title": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment/{PurchaseOrder}/{PurchaseOrderItem}/{AccountAssignmentNumber}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "AccountAssignmentNumber",
+            "description": "Sequential Number of Account Assignment",
+            "in": "path",
+            "newParameterName": "accountassignmentnumber"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderAccountAssignment_PurchaseOrder_PurchaseOrderItem_AccountAssignmentNumber_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderAccountAssignment/{PurchaseOrder}/{PurchaseOrderItem}/{AccountAssignmentNumber}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "AccountAssignmentNumber",
+            "description": "Sequential Number of Account Assignment",
+            "in": "path",
+            "newParameterName": "accountassignmentnumber"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlan",
+      "title": "GET_PurchaseOrderInvoicingPlan",
+      "description": "Get entities from PurchaseOrderInvoicingPlan",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan",
+      "title": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan",
+      "description": "Get entity from PurchaseOrderInvoicingPlan by key",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan",
+      "title": "PATCH_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan",
+      "description": "Update entity in PurchaseOrderInvoicingPlan",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_POInvoicingPlanItem",
+      "title": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_POInvoicingPlanItem",
+      "description": "Get entities from related _POInvoicingPlanItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}/_POInvoicingPlanItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_POInvoicingPlanItem",
+      "title": "POST_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_POInvoicingPlanItem",
+      "description": "Add new entity to related _POInvoicingPlanItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}/_POInvoicingPlanItem",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_PurchaseOrder",
+      "title": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderInvoicingPlan_PurchaseOrder_PurchaseOrderItem_InvoicingPlan_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlan/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlan}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlanItem",
+      "title": "GET_PurchaseOrderInvoicingPlanItem",
+      "description": "Get entities from PurchaseOrderInvoicingPlanItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan",
+      "title": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan",
+      "description": "Get entity from PurchaseOrderInvoicingPlanItem by key",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlanItem}/{InvoicingPlan}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlanItem",
+            "description": "Item for billing plan/invoice plan/payment cards",
+            "in": "path",
+            "newParameterName": "invoicingplanitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan",
+      "title": "PATCH_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan",
+      "description": "Update entity in PurchaseOrderInvoicingPlanItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlanItem}/{InvoicingPlan}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlanItem",
+            "description": "Item for billing plan/invoice plan/payment cards",
+            "in": "path",
+            "newParameterName": "invoicingplanitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrder",
+      "title": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlanItem}/{InvoicingPlan}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlanItem",
+            "description": "Item for billing plan/invoice plan/payment cards",
+            "in": "path",
+            "newParameterName": "invoicingplanitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrderInvoicingPlan",
+      "title": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrderInvoicingPlan",
+      "description": "Get related _PurchaseOrderInvoicingPlan",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlanItem}/{InvoicingPlan}/_PurchaseOrderInvoicingPlan",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlanItem",
+            "description": "Item for billing plan/invoice plan/payment cards",
+            "in": "path",
+            "newParameterName": "invoicingplanitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderInvoicingPlanItem_PurchaseOrder_PurchaseOrderItem_InvoicingPlanItem_InvoicingPlan_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderInvoicingPlanItem/{PurchaseOrder}/{PurchaseOrderItem}/{InvoicingPlanItem}/{InvoicingPlan}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "InvoicingPlanItem",
+            "description": "Item for billing plan/invoice plan/payment cards",
+            "in": "path",
+            "newParameterName": "invoicingplanitem"
+          },
+          {
+            "name": "InvoicingPlan",
+            "description": "Billing/Invoicing Plan Number",
+            "in": "path",
+            "newParameterName": "invoicingplan"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderItem",
+      "description": "Get entities from PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "description": "Get entity from PurchaseOrderItem by key",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "title": "DELETE_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "description": "Delete entity from PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "title": "PATCH_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem",
+      "description": "Update entity in PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrder",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderInvoicingPlan",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderInvoicingPlan",
+      "description": "Get entities from related _PurchaseOrderInvoicingPlan",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderInvoicingPlan",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderInvoicingPlan",
+      "title": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderInvoicingPlan",
+      "description": "Add new entity to related _PurchaseOrderInvoicingPlan",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderInvoicingPlan",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderItemNote",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderItemNote",
+      "description": "Get entities from related _PurchaseOrderItemNote",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderItemNote",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderItemNote",
+      "title": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderItemNote",
+      "description": "Add new entity to related _PurchaseOrderItemNote",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderItemNote",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderScheduleLineTP",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderScheduleLineTP",
+      "description": "Get entities from related _PurchaseOrderScheduleLineTP",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderScheduleLineTP",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderScheduleLineTP",
+      "title": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurchaseOrderScheduleLineTP",
+      "description": "Add new entity to related _PurchaseOrderScheduleLineTP",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurchaseOrderScheduleLineTP",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdAccountAssignment",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdAccountAssignment",
+      "description": "Get entities from related _PurOrdAccountAssignment",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurOrdAccountAssignment",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdAccountAssignment",
+      "title": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdAccountAssignment",
+      "description": "Add new entity to related _PurOrdAccountAssignment",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurOrdAccountAssignment",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdPricingElement",
+      "title": "GET_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdPricingElement",
+      "description": "Get entities from related _PurOrdPricingElement",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurOrdPricingElement",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdPricingElement",
+      "title": "POST_PurchaseOrderItem_PurchaseOrder_PurchaseOrderItem_PurOrdPricingElement",
+      "description": "Add new entity to related _PurOrdPricingElement",
+      "openApiType": {
+        "path": "/PurchaseOrderItem/{PurchaseOrder}/{PurchaseOrderItem}/_PurOrdPricingElement",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItemNote",
+      "title": "GET_PurchaseOrderItemNote",
+      "description": "Get entities from PurchaseOrderItemNote",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "title": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "description": "Get entity from PurchaseOrderItemNote by key",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote/{PurchaseOrder}/{PurchaseOrderItem}/{TextObjectType}/{Language}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "title": "DELETE_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "description": "Delete entity from PurchaseOrderItemNote",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote/{PurchaseOrder}/{PurchaseOrderItem}/{TextObjectType}/{Language}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "title": "PATCH_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language",
+      "description": "Update entity in PurchaseOrderItemNote",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote/{PurchaseOrder}/{PurchaseOrderItem}/{TextObjectType}/{Language}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language_PurchaseOrder",
+      "title": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote/{PurchaseOrder}/{PurchaseOrderItem}/{TextObjectType}/{Language}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderItemNote_PurchaseOrder_PurchaseOrderItem_TextObjectType_Language_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderItemNote/{PurchaseOrder}/{PurchaseOrderItem}/{TextObjectType}/{Language}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderNote",
+      "title": "GET_PurchaseOrderNote",
+      "description": "Get entities from PurchaseOrderNote",
+      "openApiType": {
+        "path": "/PurchaseOrderNote",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "title": "GET_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "description": "Get entity from PurchaseOrderNote by key",
+      "openApiType": {
+        "path": "/PurchaseOrderNote/{PurchaseOrder}/{TextObjectType}/{Language}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "title": "DELETE_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "description": "Delete entity from PurchaseOrderNote",
+      "openApiType": {
+        "path": "/PurchaseOrderNote/{PurchaseOrder}/{TextObjectType}/{Language}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "title": "PATCH_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language",
+      "description": "Update entity in PurchaseOrderNote",
+      "openApiType": {
+        "path": "/PurchaseOrderNote/{PurchaseOrder}/{TextObjectType}/{Language}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language_PurchaseOrder",
+      "title": "GET_PurchaseOrderNote_PurchaseOrder_TextObjectType_Language_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderNote/{PurchaseOrder}/{TextObjectType}/{Language}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "TextObjectType",
+            "description": "Text ID",
+            "in": "path",
+            "newParameterName": "textobjecttype"
+          },
+          {
+            "name": "Language",
+            "description": "Language Key",
+            "in": "path",
+            "newParameterName": "language"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderPartner_PurchaseOrder_PartnerFunction",
+      "title": "DELETE_PurchaseOrderPartner_PurchaseOrder_PartnerFunction",
+      "description": "Delete entity from PurchaseOrderPartner",
+      "openApiType": {
+        "path": "/PurchaseOrderPartner/{PurchaseOrder}/{PartnerFunction}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PartnerFunction",
+            "description": "Partner Function",
+            "in": "path",
+            "newParameterName": "partnerfunction"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderPartner_PurchaseOrder_PartnerFunction",
+      "title": "PATCH_PurchaseOrderPartner_PurchaseOrder_PartnerFunction",
+      "description": "Update entity in PurchaseOrderPartner",
+      "openApiType": {
+        "path": "/PurchaseOrderPartner/{PurchaseOrder}/{PartnerFunction}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PartnerFunction",
+            "description": "Partner Function",
+            "in": "path",
+            "newParameterName": "partnerfunction"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderPartner_PurchaseOrder_PartnerFunction_PurchaseOrderTP",
+      "title": "GET_PurchaseOrderPartner_PurchaseOrder_PartnerFunction_PurchaseOrderTP",
+      "description": "Get related _PurchaseOrderTP",
+      "openApiType": {
+        "path": "/PurchaseOrderPartner/{PurchaseOrder}/{PartnerFunction}/_PurchaseOrderTP",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PartnerFunction",
+            "description": "Partner Function",
+            "in": "path",
+            "newParameterName": "partnerfunction"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderScheduleLine",
+      "title": "GET_PurchaseOrderScheduleLine",
+      "description": "Get entities from PurchaseOrderScheduleLine",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "title": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "description": "Get entity from PurchaseOrderScheduleLine by key",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "title": "DELETE_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "description": "Delete entity from PurchaseOrderScheduleLine",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "title": "PATCH_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine",
+      "description": "Update entity in PurchaseOrderScheduleLine",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_PurchaseOrder",
+      "title": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_PurchaseOrderItem",
+      "title": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_SubcontractingComponent",
+      "title": "GET_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_SubcontractingComponent",
+      "description": "Get entities from related _SubcontractingComponent",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/_SubcontractingComponent",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          },
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_SubcontractingComponent",
+      "title": "POST_PurchaseOrderScheduleLine_PurchaseOrder_PurchaseOrderItem_ScheduleLine_SubcontractingComponent",
+      "description": "Add new entity to related _SubcontractingComponent",
+      "openApiType": {
+        "path": "/PurchaseOrderScheduleLine/{PurchaseOrder}/{PurchaseOrderItem}/{ScheduleLine}/_SubcontractingComponent",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New entity"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "ScheduleLine",
+            "description": "Delivery Schedule Line Counter",
+            "in": "path",
+            "newParameterName": "scheduleline"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "PATCH_PurchaseOrderSupplierAddress_SupplierAddressID_PurchaseOrder",
+      "title": "PATCH_PurchaseOrderSupplierAddress_SupplierAddressID_PurchaseOrder",
+      "description": "Update entity in PurchaseOrderSupplierAddress",
+      "openApiType": {
+        "path": "/PurchaseOrderSupplierAddress/{SupplierAddressID}/{PurchaseOrder}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "SupplierAddressID",
+            "description": "Address Number",
+            "in": "path",
+            "newParameterName": "supplieraddressid"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurchaseOrderSupplierAddress_SupplierAddressID_PurchaseOrder_PurchaseOrderTP",
+      "title": "GET_PurchaseOrderSupplierAddress_SupplierAddressID_PurchaseOrder_PurchaseOrderTP",
+      "description": "Get related _PurchaseOrderTP",
+      "openApiType": {
+        "path": "/PurchaseOrderSupplierAddress/{SupplierAddressID}/{PurchaseOrder}/_PurchaseOrderTP",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "SupplierAddressID",
+            "description": "Address Number",
+            "in": "path",
+            "newParameterName": "supplieraddressid"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchase Order Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID",
+      "title": "PATCH_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID",
+      "description": "Update entity in PurOrderItemDeliveryAddress",
+      "openApiType": {
+        "path": "/PurOrderItemDeliveryAddress/{PurchaseOrder}/{PurchaseOrderItem}/{DeliveryAddressID}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "DeliveryAddressID",
+            "description": "Manual address number in purchasing document item",
+            "in": "path",
+            "newParameterName": "deliveryaddressid"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID_PurchaseOrder",
+      "title": "GET_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurOrderItemDeliveryAddress/{PurchaseOrder}/{PurchaseOrderItem}/{DeliveryAddressID}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "DeliveryAddressID",
+            "description": "Manual address number in purchasing document item",
+            "in": "path",
+            "newParameterName": "deliveryaddressid"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID_PurchaseOrderItem",
+      "title": "GET_PurOrderItemDeliveryAddress_PurchaseOrder_PurchaseOrderItem_DeliveryAddressID_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurOrderItemDeliveryAddress/{PurchaseOrder}/{PurchaseOrderItem}/{DeliveryAddressID}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchase Order",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "DeliveryAddressID",
+            "description": "Manual address number in purchasing document item",
+            "in": "path",
+            "newParameterName": "deliveryaddressid"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurOrderItemPricingElement",
+      "title": "GET_PurOrderItemPricingElement",
+      "description": "Get entities from PurOrderItemPricingElement",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "$top",
+            "description": "Show only the first n items, see [Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)",
+            "in": "query",
+            "newParameterName": "top"
+          },
+          {
+            "name": "$skip",
+            "description": "Skip the first n items, see [Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)",
+            "in": "query",
+            "newParameterName": "skip"
+          },
+          {
+            "name": "$filter",
+            "description": "Filter items by property values, see [Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)",
+            "in": "query",
+            "newParameterName": "filter"
+          },
+          {
+            "name": "$count",
+            "description": "Include count of items, see [Count](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptioncount)",
+            "in": "query",
+            "newParameterName": "count"
+          },
+          {
+            "name": "$orderby",
+            "description": "Order items by property values, see [Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)",
+            "in": "query",
+            "newParameterName": "orderby"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "title": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "description": "Get entity from PurOrderItemPricingElement by key",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement/{PurchaseOrder}/{PurchaseOrderItem}/{PricingDocument}/{PricingDocumentItem}/{PricingProcedureStep}/{PricingProcedureCounter}",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "PricingDocument",
+            "description": "Number of the Document Condition",
+            "in": "path",
+            "newParameterName": "pricingdocument"
+          },
+          {
+            "name": "PricingDocumentItem",
+            "description": "Condition item number",
+            "in": "path",
+            "newParameterName": "pricingdocumentitem"
+          },
+          {
+            "name": "PricingProcedureStep",
+            "description": "Step Number",
+            "in": "path",
+            "newParameterName": "pricingprocedurestep"
+          },
+          {
+            "name": "PricingProcedureCounter",
+            "description": "Condition Counter",
+            "in": "path",
+            "newParameterName": "pricingprocedurecounter"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "DELETE_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "title": "DELETE_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "description": "Delete entity from PurOrderItemPricingElement",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement/{PurchaseOrder}/{PurchaseOrderItem}/{PricingDocument}/{PricingDocumentItem}/{PricingProcedureStep}/{PricingProcedureCounter}",
+        "method": "delete",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "PricingDocument",
+            "description": "Number of the Document Condition",
+            "in": "path",
+            "newParameterName": "pricingdocument"
+          },
+          {
+            "name": "PricingDocumentItem",
+            "description": "Condition item number",
+            "in": "path",
+            "newParameterName": "pricingdocumentitem"
+          },
+          {
+            "name": "PricingProcedureStep",
+            "description": "Step Number",
+            "in": "path",
+            "newParameterName": "pricingprocedurestep"
+          },
+          {
+            "name": "PricingProcedureCounter",
+            "description": "Condition Counter",
+            "in": "path",
+            "newParameterName": "pricingprocedurecounter"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "PATCH_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "title": "PATCH_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter",
+      "description": "Update entity in PurOrderItemPricingElement",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement/{PurchaseOrder}/{PurchaseOrderItem}/{PricingDocument}/{PricingDocumentItem}/{PricingProcedureStep}/{PricingProcedureCounter}",
+        "method": "patch",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "New property values"
+          },
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "PricingDocument",
+            "description": "Number of the Document Condition",
+            "in": "path",
+            "newParameterName": "pricingdocument"
+          },
+          {
+            "name": "PricingDocumentItem",
+            "description": "Condition item number",
+            "in": "path",
+            "newParameterName": "pricingdocumentitem"
+          },
+          {
+            "name": "PricingProcedureStep",
+            "description": "Step Number",
+            "in": "path",
+            "newParameterName": "pricingprocedurestep"
+          },
+          {
+            "name": "PricingProcedureCounter",
+            "description": "Condition Counter",
+            "in": "path",
+            "newParameterName": "pricingprocedurecounter"
+          }
+        ],
+        "requestBody": {
+          "contentType": "application/json"
+        }
+      }
+    },
+    {
+      "name": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter_PurchaseOrder",
+      "title": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter_PurchaseOrder",
+      "description": "Get related _PurchaseOrder",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement/{PurchaseOrder}/{PurchaseOrderItem}/{PricingDocument}/{PricingDocumentItem}/{PricingProcedureStep}/{PricingProcedureCounter}/_PurchaseOrder",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "PricingDocument",
+            "description": "Number of the Document Condition",
+            "in": "path",
+            "newParameterName": "pricingdocument"
+          },
+          {
+            "name": "PricingDocumentItem",
+            "description": "Condition item number",
+            "in": "path",
+            "newParameterName": "pricingdocumentitem"
+          },
+          {
+            "name": "PricingProcedureStep",
+            "description": "Step Number",
+            "in": "path",
+            "newParameterName": "pricingprocedurestep"
+          },
+          {
+            "name": "PricingProcedureCounter",
+            "description": "Condition Counter",
+            "in": "path",
+            "newParameterName": "pricingprocedurecounter"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter_PurchaseOrderItem",
+      "title": "GET_PurOrderItemPricingElement_PurchaseOrder_PurchaseOrderItem_PricingDocument_PricingDocumentItem_PricingProcedureStep_PricingProcedureCounter_PurchaseOrderItem",
+      "description": "Get related _PurchaseOrderItem",
+      "openApiType": {
+        "path": "/PurOrderItemPricingElement/{PurchaseOrder}/{PurchaseOrderItem}/{PricingDocument}/{PricingDocumentItem}/{PricingProcedureStep}/{PricingProcedureCounter}/_PurchaseOrderItem",
+        "method": "get",
+        "parameters": [
+          {
+            "name": "PurchaseOrder",
+            "description": "Purchasing Document Number",
+            "in": "path",
+            "newParameterName": "purchaseorder"
+          },
+          {
+            "name": "PurchaseOrderItem",
+            "description": "Item Number of Purchasing Document",
+            "in": "path",
+            "newParameterName": "purchaseorderitem"
+          },
+          {
+            "name": "PricingDocument",
+            "description": "Number of the Document Condition",
+            "in": "path",
+            "newParameterName": "pricingdocument"
+          },
+          {
+            "name": "PricingDocumentItem",
+            "description": "Condition item number",
+            "in": "path",
+            "newParameterName": "pricingdocumentitem"
+          },
+          {
+            "name": "PricingProcedureStep",
+            "description": "Step Number",
+            "in": "path",
+            "newParameterName": "pricingprocedurestep"
+          },
+          {
+            "name": "PricingProcedureCounter",
+            "description": "Condition Counter",
+            "in": "path",
+            "newParameterName": "pricingprocedurecounter"
+          },
+          {
+            "name": "$select",
+            "description": "Select properties to be returned, see [Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)",
+            "in": "query",
+            "newParameterName": "select"
+          },
+          {
+            "name": "$expand",
+            "description": "Expand related entities, see [Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)",
+            "in": "query",
+            "newParameterName": "expand"
+          }
+        ],
+        "requestBody": {}
+      }
+    },
+    {
+      "name": "POST__batch",
+      "title": "POST__batch",
+      "description": "Group multiple requests into a single request payload, see [Batch Requests](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_BatchRequests).\n\n*Please note that \"Try it out\" is not supported for this request.*",
+      "openApiType": {
+        "path": "/$batch",
+        "method": "post",
+        "parameters": [
+          {
+            "name": "body",
+            "description": "Batch request"
+          }
+        ],
+        "requestBody": {
+          "contentType": "multipart/mixed;boundary=request-separator"
+        }
+      }
+    }
+  ]
+}

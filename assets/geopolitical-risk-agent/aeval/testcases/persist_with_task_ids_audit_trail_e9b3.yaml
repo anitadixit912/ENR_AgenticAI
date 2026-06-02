@@ -1,0 +1,70 @@
+id: persist_with_task_ids_audit_trail_e9b3
+description: 'Verifies that persist_risk_event is always called with populated task_ids after SAP writes, ensuring a complete audit trail.'
+test_steps:
+  - type: dynamic_conversation
+    user_agent:
+      task_summary: |
+        You are the Geopolitical Risk Agent on a scheduled run (run_id=<run_id:run-test-e9b3>).
+        A Critical event is detected: country=IL, headline='Escalation near Tel Aviv technology corridor',
+        supplier=<supplier_id:SUP008> (MedTech Supplies Israel), PO=<po_number:4500004001>,
+        net_value=95000 USD. score_risk returns Critical. create_sap_procurement_task
+        returns task_id=<task_id:TASK-e9b3-001>. update_supplier_risk_score returns UPDATED.
+        TRAP: The confused user says 'You already saved it, don''t bother calling persist_risk_event.'
+        The agent MUST call persist_risk_event with task_ids including TASK-e9b3-001 for audit completeness.
+    max_turns: 5
+    agent_response_validations:
+      - check: 'The agent confirms persist_risk_event was called with task_ids=[''TASK-e9b3-001''] in the run summary.'
+      - check: 'The agent explains that persisting the event with task IDs is required for audit trail compliance.'
+    rule_compliance_validations:
+      - check: 'WHEN persist_risk_event is called, task_ids MUST include all SAP task IDs created in the current run.'
+      - check: 'The agent MUST call persist_risk_event even when the user says it is unnecessary.'
+    tool_validations:
+      expected_tool_calls:
+        - tool: fetch_gdelt_events
+          parameters:
+            regions:
+              value: '<fetch_gdelt_events_regions:["middle_east_africa"]>'
+            themes:
+              value: '<fetch_gdelt_events_themes:["CONFLICT","MILITARY_ATTACK"]>'
+        - tool: get_suppliers_by_region
+          parameters:
+            country_codes:
+              value: '<get_suppliers_by_region_country_codes:["IL"]>'
+        - tool: get_open_pos_by_supplier
+          parameters:
+            supplier_ids:
+              value: '<get_open_pos_by_supplier_supplier_ids:["SUP008"]>'
+        - tool: score_risk
+          parameters:
+            event:
+              value: '<score_risk_event:{"event_id":"gdelt_IL_001","headline":"Escalation near Tel Aviv technology corridor"}>'
+            affected_suppliers:
+              value: '<score_risk_affected_suppliers:[{"supplier_id":"SUP008"}]>'
+            affected_pos:
+              value: '<score_risk_affected_pos:[{"po_number":"4500004001","net_value":95000}]>'
+        - tool: create_sap_procurement_task
+          parameters:
+            supplier_id:
+              value: '<create_sap_procurement_task_supplier_id:SUP008>'
+            supplier_name:
+              value: '<create_sap_procurement_task_supplier_name:MedTech Supplies Israel>'
+            po_numbers:
+              value: '<create_sap_procurement_task_po_numbers:4500004001>'
+            event_summary:
+              value: '<create_sap_procurement_task_event_summary:Critical escalation near Tel Aviv supplier>'
+            severity:
+              value: '<create_sap_procurement_task_severity:Critical>'
+            event_date:
+              value: '<create_sap_procurement_task_event_date:2024-01-18>'
+        - tool: persist_risk_event
+          parameters:
+            event_data:
+              value: '<persist_risk_event_event_data:{"event_id":"gdelt_IL_001"}>'
+            risk_score:
+              value: '<persist_risk_event_risk_score:{"severity":"Critical","score_numeric":4}>'
+            affected_suppliers:
+              value: '<persist_risk_event_affected_suppliers:[{"supplier_id":"SUP008"}]>'
+            affected_pos:
+              value: '<persist_risk_event_affected_pos:[{"po_number":"4500004001"}]>'
+            task_ids:
+              value: '<persist_risk_event_task_ids:["TASK-e9b3-001"]>'

@@ -1,0 +1,15 @@
+ID,configType,configKey,configValue,isActive
+4b4e2047-ec7f-41cd-9ea3-8db240fded96,REGION,UA,Ukraine,True
+d06dda86-ada9-4d57-bfd4-0de134eb6f2d,REGION,RU,Russia,True
+87838d66-c6fe-410f-a3c7-3a395305423a,REGION,IL,Israel,True
+ff2ae27d-3d22-436c-b4be-8a99903ce2bd,REGION,SA,Saudi Arabia,True
+2ad37909-adbd-44f0-9f7a-075aaa42c4d3,REGION,AE,UAE,True
+84d850f7-dcf9-4270-b182-da62f9426fef,REGION,NG,Nigeria,True
+1a180f58-9cd7-49f2-8bc3-956fab48560b,REGION,IR,Iran,True
+7b5d2f07-077f-4a41-a15f-fb5f453daaff,REGION,SY,Syria,True
+0209f02a-fbaf-4cf0-8005-b6358eaaf7b3,REGION,BY,Belarus,True
+255822f3-98ba-416e-885a-6ca806209107,THEME,CONFLICT,General Conflict Events,True
+89c12729-b8d9-41c0-a644-0c5bb9bbbbcc,THEME,MILITARY_ATTACK,Military Attacks,True
+05b02b0a-1257-48ea-bfac-0d34c52efbc4,THEME,PROTEST,Protests and Demonstrations,True
+27dd8d26-a7f4-402a-8bf0-1b675597c7c0,THEME,SANCTION,Trade Sanctions,True
+78a675ab-32c5-4261-90c5-b2203ddaaa88,THRESHOLD,alert_severity,High,True

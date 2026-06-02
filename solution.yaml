@@ -2,11 +2,13 @@ apiVersion: solution.sap/v1
 kind: Solution
 
 metadata:
-  name: churn-prevention-58f94
+  name: geopolitical-risk-intelligence-e4996
   version: 1.0.0
-  description: "Invisible Exits — AI agent that detects early churn signals in SAP S/4HANA, scores at-risk accounts, and surfaces personalised Joule alerts to sales teams with a full GDPR audit trail."
+  description: "Real-time geopolitical risk intelligence agent integrating GDELT and NewsAPI with SAP S/4HANA to monitor conflict signals, score supplier risk, and surface actionable alerts."
 
 assets:
-  - ref: ./assets/churn-prevention-agent/asset.yaml
-  - ref: ./assets/account-service-mcp/asset.yaml
-  - ref: ./assets/opportunity-service-mcp/asset.yaml
+  - ref: ./assets/geopolitical-risk-agent/asset.yaml
+  - ref: ./assets/geopolitical-risk-cap/asset.yaml
+  - ref: ./assets/geopolitical-risk-agent/mcps/procurement-task/asset.yaml
+  - ref: ./assets/geopolitical-risk-agent/mcps/purchase-order/asset.yaml
+  - ref: ./assets/geopolitical-risk-agent/mcps/business-partner/asset.yaml

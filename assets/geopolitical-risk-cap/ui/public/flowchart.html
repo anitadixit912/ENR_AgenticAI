@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Geopolitical Risk Intelligence Agent — Workflow</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #0f1923;
+      color: #e0e6ed;
+      min-height: 100vh;
+      padding: 32px 24px 48px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 22px;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .subtitle {
+      text-align: center;
+      font-size: 13px;
+      color: #7a8fa6;
+      margin-bottom: 36px;
+    }
+
+    /* ── Legend ── */
+    .legend {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 40px;
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 12px;
+      color: #b0bec5;
+    }
+    .legend-dot {
+      width: 14px; height: 14px;
+      border-radius: 4px;
+      flex-shrink: 0;
+    }
+
+    /* ── Flow layout ── */
+    .flow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── Row ── */
+    .row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    /* ── Node card ── */
+    .node {
+      border-radius: 12px;
+      padding: 16px 20px;
+      min-width: 180px;
+      max-width: 220px;
+      text-align: center;
+      position: relative;
+      border: 2px solid transparent;
+      transition: transform 0.15s;
+    }
+    .node:hover { transform: translateY(-3px); }
+
+    .node-icon  { font-size: 28px; margin-bottom: 8px; }
+    .node-title { font-size: 13px; font-weight: 700; line-height: 1.3; color: #fff; }
+    .node-sub   { font-size: 11px; color: #b0bec5; margin-top: 5px; line-height: 1.4; }
+    .node-badge {
+      display: inline-block;
+      margin-top: 7px;
+      font-size: 10px;
+      font-weight: 700;
+      padding: 2px 9px;
+      border-radius: 10px;
+      letter-spacing: 0.4px;
+    }
+
+    /* colour themes */
+    .c-source   { background: #0d2137; border-color: #1565c0; }
+    .c-source   .node-badge { background: #1565c0; color: #fff; }
+
+    .c-ingest   { background: #1a1035; border-color: #6a1b9a; }
+    .c-ingest   .node-badge { background: #6a1b9a; color: #fff; }
+
+    .c-agent    { background: #0d2535; border-color: #00838f; }
+    .c-agent    .node-badge { background: #00838f; color: #fff; }
+
+    .c-sap      { background: #0a2e1a; border-color: #2e7d32; }
+    .c-sap      .node-badge { background: #2e7d32; color: #fff; }
+
+    .c-score    { background: #2c1810; border-color: #e65100; }
+    .c-score    .node-badge { background: #e65100; color: #fff; }
+
+    .c-action   { background: #2c1a00; border-color: #f57f17; }
+    .c-action   .node-badge { background: #f57f17; color: #000; }
+
+    .c-alert    { background: #2c0a0a; border-color: #c62828; }
+    .c-alert    .node-badge { background: #c62828; color: #fff; }
+
+    .c-store    { background: #0a1a2e; border-color: #0277bd; }
+    .c-store    .node-badge { background: #0277bd; color: #fff; }
+
+    .c-dash     { background: #0d1a1a; border-color: #00695c; }
+    .c-dash     .node-badge { background: #00695c; color: #fff; }
+
+    /* ── Connector arrows ── */
+    .arrow-down {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+      max-width: 1100px;
+      margin: 0;
+    }
+    .arrow-line {
+      width: 2px;
+      background: linear-gradient(to bottom, #37474f, #546e7a);
+      flex-grow: 1;
+    }
+    .arrow-label {
+      font-size: 10px;
+      color: #78909c;
+      background: #0f1923;
+      padding: 2px 10px;
+      border-radius: 8px;
+      border: 1px solid #2a3a4a;
+      white-space: nowrap;
+    }
+    .connector-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 0;
+    }
+    .connector-block svg { display: block; }
+
+    /* big arrow between row groups */
+    .big-arrow {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 2px;
+      padding: 6px 0;
+      width: 100%;
+    }
+    .big-arrow-stem {
+      width: 3px;
+      height: 28px;
+      background: #37474f;
+      border-radius: 2px;
+    }
+    .big-arrow-head {
+      width: 0; height: 0;
+      border-left: 7px solid transparent;
+      border-right: 7px solid transparent;
+      border-top: 10px solid #37474f;
+    }
+    .big-arrow-label {
+      font-size: 11px;
+      color: #607d8b;
+      margin-top: 4px;
+      background: #0f1923;
+      padding: 2px 12px;
+      border-radius: 8px;
+      border: 1px solid #263238;
+    }
+
+    /* ── Fan connector (many→one) ── */
+    .fan-wrap {
+      width: 100%;
+      max-width: 1100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0 0;
+    }
+    .fan-svg-row {
+      width: 100%;
+      max-width: 900px;
+    }
+
+    /* ── Divider label ── */
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.2px;
+      color: #546e7a;
+      text-transform: uppercase;
+      margin: 10px 0 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      max-width: 1100px;
+      justify-content: center;
+    }
+    .section-label::before,
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #1e3040;
+    }
+
+    /* ── Decision diamond ── */
+    .diamond-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 4px 0;
+    }
+    .diamond {
+      width: 140px;
+      height: 70px;
+      background: #1a2535;
+      border: 2px solid #455a64;
+      transform: rotate(0deg);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      text-align: center;
+      position: relative;
+      clip-path: polygon(50% 0%, 100% 50%, 50% 100%, 0% 50%);
+    }
+    .diamond-inner {
+      font-size: 11px;
+      font-weight: 700;
+      color: #eceff1;
+      line-height: 1.3;
+      transform: rotate(0deg);
+    }
+
+    /* ── Outcome fork ── */
+    .fork-row {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 40px;
+      width: 100%;
+      max-width: 1100px;
+    }
+    .fork-branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      max-width: 280px;
+    }
+    .fork-label {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.3px;
+    }
+    .fork-label.low  { background: #1b3a1b; color: #66bb6a; border: 1px solid #388e3c; }
+    .fork-label.high { background: #3a1b1b; color: #ef9a9a; border: 1px solid #c62828; }
+
+    /* ── Small connector ── */
+    .mini-arrow {
+      width: 2px;
+      height: 18px;
+      background: #37474f;
+      border-radius: 1px;
+    }
+    .mini-arrowhead {
+      width: 0; height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      border-top: 7px solid #37474f;
+    }
+
+    /* responsive */
+    @media (max-width: 700px) {
+      .row { gap: 12px; }
+      .node { min-width: 140px; max-width: 180px; padding: 12px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+<h1>⚠️ Geopolitical Risk Intelligence Agent</h1>
+<p class="subtitle">End-to-End Workflow — Data Sources, AI Processing &amp; SAP Integration</p>
+
+<!-- Legend -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot" style="background:#1565c0"></div>External Data Source</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#6a1b9a"></div>Signal Ingestion (n8n)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#00838f"></div>AI Agent (BTP)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#2e7d32"></div>SAP S/4HANA</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#e65100"></div>Risk Scoring</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#f57f17"></div>SAP Actions</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#c62828"></div>Alert &amp; Notification</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#0277bd"></div>Storage (HANA Cloud)</div>
+  <div class="legend-item"><div class="legend-dot" style="background:#00695c"></div>React Dashboard</div>
+</div>
+
+<div class="flow">
+
+  <!-- ═══ STEP 1: External sources ═══ -->
+  <div class="section-label">① External Data Sources</div>
+  <div class="row">
+
+    <div class="node c-source">
+      <div class="node-icon">📡</div>
+      <div class="node-title">GDELT Project</div>
+      <div class="node-sub">
+        Global Database of Events, Language &amp; Tone<br/>
+        <strong>250+ countries · 100+ languages</strong><br/>
+        Conflict, Military, Protest, Sanctions events
+      </div>
+      <span class="node-badge">FREE · Every 15 min</span>
+    </div>
+
+    <div style="display:flex;align-items:center;color:#546e7a;font-size:22px;padding-top:30px;">+</div>
+
+    <div class="node c-source" style="opacity:0.55;">
+      <div class="node-icon">📰</div>
+      <div class="node-title">NewsAPI <span style="font-size:10px;color:#ef9a9a;">(optional)</span></div>
+      <div class="node-sub">
+        150k+ global news sources<br/>
+        Conflict, sanctions &amp; trade disruption keywords
+      </div>
+      <span class="node-badge" style="background:#b71c1c;">PAID · $449/mo · Not active</span>
+    </div>
+
+  </div>
+
+  <!-- Arrow down -->
+  <div class="big-arrow">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">CAMEO conflict theme filter (CONFLICT · MILITARY_ATTACK · PROTEST · SANCTION · HOSTILITY) · Max 500 events/run</div>
+  </div>
+
+  <!-- ═══ STEP 2: n8n Ingestion ═══ -->
+  <div class="section-label">② Scheduled Signal Ingestion (n8n Workflow)</div>
+  <div class="row">
+    <div class="node c-ingest" style="max-width:420px;min-width:320px;">
+      <div class="node-icon">⚙️</div>
+      <div class="node-title">n8n Scheduler</div>
+      <div class="node-sub">
+        Runs every 15 minutes on SAP BTP Job Scheduling Service<br/>
+        Filters events by target regions: <strong>Ukraine · Russia · Israel · Saudi Arabia · UAE · Iran · Syria · Nigeria · Egypt · Belarus</strong><br/>
+        Deduplicates by region/theme cluster · Forwards signals to AI Agent
+      </div>
+      <span class="node-badge">BTP Job Scheduler · Automated</span>
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <div class="big-arrow">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">Filtered, deduplicated event signals</div>
+  </div>
+
+  <!-- ═══ STEP 3: AI Agent ═══ -->
+  <div class="section-label">③ AI Agent Processing (Python · A2A Protocol · SAP BTP)</div>
+  <div class="row">
+    <div class="node c-agent">
+      <div class="node-icon">🤖</div>
+      <div class="node-title">fetch_gdelt_events()</div>
+      <div class="node-sub">Queries GDELT API v2<br/>Filters by themes &amp; ISO country codes</div>
+      <span class="node-badge">Tool M1</span>
+    </div>
+    <div class="node c-sap">
+      <div class="node-icon">🏭</div>
+      <div class="node-title">get_suppliers_by_region()</div>
+      <div class="node-sub">
+        <strong>SAP Business Partner API</strong><br/>
+        Filter: BusinessPartnerCountry IN affected countries<br/>
+        &amp; Category = '2' (Supplier)<br/>
+        Top 100 per call
+      </div>
+      <span class="node-badge">OData API</span>
+    </div>
+    <div class="node c-sap">
+      <div class="node-icon">📋</div>
+      <div class="node-title">get_open_pos_by_supplier()</div>
+      <div class="node-sub">
+        <strong>SAP Purchase Order API</strong><br/>
+        Filter: Supplier IN affected suppliers<br/>
+        &amp; PurchaseOrderStatus ≠ CLOSED<br/>
+        Top 100 per call
+      </div>
+      <span class="node-badge">CE_PURCHASEORDER_0001</span>
+    </div>
+  </div>
+
+  <!-- Arrow -->
+  <div class="big-arrow">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">Event + matched suppliers + open POs combined for scoring</div>
+  </div>
+
+  <!-- ═══ STEP 4: Risk Scoring ═══ -->
+  <div class="section-label">④ AI Risk Scoring (SAP AI Core · GPT-4o via Generative AI Hub)</div>
+  <div class="row">
+    <div class="node c-score" style="max-width:480px;min-width:360px;">
+      <div class="node-icon">🧠</div>
+      <div class="node-title">score_risk() — AI Reasoning</div>
+      <div class="node-sub">
+        LLM (GPT-4o) evaluates: conflict severity · supplier count · PO value at risk<br/>
+        Produces: <strong>Severity Score + Plain-Language Justification</strong><br/><br/>
+        <strong>Fallback (if AI Core unavailable):</strong> Rule-based CAMEO scoring<br/>
+        Critical ≥ CAMEO 19 + 5 suppliers · High ≥ CAMEO 14 · Medium ≥ CAMEO 10
+      </div>
+      <span class="node-badge">Low · Medium · High · Critical</span>
+    </div>
+  </div>
+
+  <!-- Arrow to decision -->
+  <div class="big-arrow">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">Severity assigned</div>
+  </div>
+
+  <!-- ═══ STEP 5: Decision ═══ -->
+  <div class="section-label">⑤ Severity-Based Routing</div>
+
+  <div class="fork-row">
+
+    <!-- LOW / MEDIUM branch -->
+    <div class="fork-branch">
+      <div class="fork-label low">🟢 Low / 🟡 Medium</div>
+      <div class="mini-arrow"></div>
+      <div class="mini-arrowhead"></div>
+      <div class="node c-store" style="min-width:200px;">
+        <div class="node-icon">💾</div>
+        <div class="node-title">persist_risk_event()</div>
+        <div class="node-sub">Stored in HANA Cloud only<br/>No SAP tasks · No emails<br/>Visible on dashboard</div>
+        <span class="node-badge">Log &amp; Monitor</span>
+      </div>
+    </div>
+
+    <!-- HIGH / CRITICAL branch -->
+    <div class="fork-branch" style="max-width:480px;">
+      <div class="fork-label high">🔴 Critical / 🟠 High</div>
+      <div class="mini-arrow"></div>
+      <div class="mini-arrowhead"></div>
+
+      <!-- Three parallel actions -->
+      <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+
+        <div class="node c-action" style="min-width:160px;max-width:190px;">
+          <div class="node-icon">📌</div>
+          <div class="node-title">create_sap_procurement_task()</div>
+          <div class="node-sub">
+            <strong>API_SUPPLIER_ACTIVITY_TASK_SRV</strong><br/>
+            Creates RISK_REVIEW task in SAP for responsible buyer
+          </div>
+          <span class="node-badge">SAP Task M4</span>
+        </div>
+
+        <div class="node c-action" style="min-width:160px;max-width:190px;">
+          <div class="node-icon">📊</div>
+          <div class="node-title">update_supplier_risk_score()</div>
+          <div class="node-sub">
+            <strong>Supplier Risk Engagements API</strong><br/>
+            Updates SAP risk profile<br/>Critical→4 · High→3
+          </div>
+          <span class="node-badge">SAP Risk M5</span>
+        </div>
+
+        <div class="node c-alert" style="min-width:160px;max-width:190px;">
+          <div class="node-icon">🔔</div>
+          <div class="node-title">send_alert_email()</div>
+          <div class="node-sub">
+            <strong>SAP BTP Alert Notification Service</strong><br/>
+            OAuth 2.0 → ANS event POST<br/>
+            Email → <em>anita.dixit@sap.com</em>
+          </div>
+          <span class="node-badge">BTP ANS · M3</span>
+        </div>
+
+      </div>
+
+      <!-- merge arrow down -->
+      <div class="mini-arrow" style="height:22px;margin-top:8px;"></div>
+      <div class="mini-arrowhead"></div>
+
+      <div class="node c-store" style="min-width:200px;">
+        <div class="node-icon">💾</div>
+        <div class="node-title">persist_risk_event()</div>
+        <div class="node-sub">Full record saved to HANA Cloud<br/>Includes SAP task IDs &amp; alert history</div>
+        <span class="node-badge">Log &amp; Track M6</span>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Arrow to dashboard -->
+  <div class="big-arrow" style="margin-top:24px;">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">All risk events (all severities) persisted to HANA Cloud via CAP OData</div>
+  </div>
+
+  <!-- ═══ STEP 6: Storage ═══ -->
+  <div class="section-label">⑥ Data Storage — SAP HANA Cloud (CAP OData Backend)</div>
+  <div class="row">
+    <div class="node c-store">
+      <div class="node-icon">🗄️</div>
+      <div class="node-title">RiskEvents</div>
+      <div class="node-sub">Event ID · Date · Headline · Country · Severity · Score · Justification · PO Value</div>
+      <span class="node-badge">HANA Table</span>
+    </div>
+    <div class="node c-store">
+      <div class="node-icon">🏭</div>
+      <div class="node-title">AffectedSuppliers</div>
+      <div class="node-sub">Supplier ID · Name · Country · PO Numbers · SAP Task ID · Risk Updated</div>
+      <span class="node-badge">HANA Table</span>
+    </div>
+    <div class="node c-store">
+      <div class="node-icon">📣</div>
+      <div class="node-title">AlertHistory</div>
+      <div class="node-sub">Alert type · Recipient · Sent timestamp · Status (SENT/FAILED)</div>
+      <span class="node-badge">HANA Table</span>
+    </div>
+    <div class="node c-store">
+      <div class="node-icon">🤖</div>
+      <div class="node-title">AgentRuns</div>
+      <div class="node-sub">Run ID · Status · Events processed · Tasks created · Emails sent</div>
+      <span class="node-badge">HANA Table</span>
+    </div>
+  </div>
+
+  <!-- Arrow to dashboard -->
+  <div class="big-arrow">
+    <div class="big-arrow-stem"></div>
+    <div class="big-arrow-head"></div>
+    <div class="big-arrow-label">OData v4 REST API · Auto-refresh every 60 seconds</div>
+  </div>
+
+  <!-- ═══ STEP 7: Dashboard ═══ -->
+  <div class="section-label">⑦ React Dashboard (SAP UI5 Web Components · Vite)</div>
+  <div class="row">
+    <div class="node c-dash">
+      <div class="node-icon">🏠</div>
+      <div class="node-title">Dashboard Home</div>
+      <div class="node-sub">Summary cards · Regional heat map · Active alerts table · Severity filters</div>
+      <span class="node-badge">Live · 60s refresh</span>
+    </div>
+    <div class="node c-dash">
+      <div class="node-icon">🌐</div>
+      <div class="node-title">GDELT Signals</div>
+      <div class="node-sub">GDELT-only event feed · CAMEO theme filter · Tone score bar · Country filter</div>
+      <span class="node-badge">GDELT Source View</span>
+    </div>
+    <div class="node c-dash">
+      <div class="node-icon">🏭</div>
+      <div class="node-title">Suppliers at Risk</div>
+      <div class="node-sub">All affected suppliers · PO value · Risk score updated · Click to drill into event</div>
+      <span class="node-badge">Supplier View</span>
+    </div>
+    <div class="node c-dash">
+      <div class="node-icon">⚙️</div>
+      <div class="node-title">Configuration</div>
+      <div class="node-sub">Toggle monitored regions · Active CAMEO themes · Alert severity threshold</div>
+      <span class="node-badge">FilterConfig</span>
+    </div>
+    <div class="node c-dash">
+      <div class="node-icon">🤖</div>
+      <div class="node-title">Agent Runs</div>
+      <div class="node-sub">Run history · Status badges · Events processed · Tasks created · Error log</div>
+      <span class="node-badge">Audit Trail</span>
+    </div>
+  </div>
+
+</div><!-- /flow -->
+
+<!-- Footer -->
+<div style="text-align:center;margin-top:48px;font-size:11px;color:#37474f;line-height:2;">
+  <strong style="color:#546e7a;">Technology Stack</strong><br/>
+  Python (LangGraph · LiteLLM · A2A SDK) &nbsp;·&nbsp;
+  SAP AI Core (GPT-4o via Generative AI Hub) &nbsp;·&nbsp;
+  SAP CAP (Node.js · CDS) &nbsp;·&nbsp;
+  SAP HANA Cloud &nbsp;·&nbsp;
+  n8n Workflow &nbsp;·&nbsp;
+  React + SAP UI5 Web Components &nbsp;·&nbsp;
+  SAP BTP (Cloud Foundry)
+</div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+id: empty_signals_early_exit_d5e1
+description: 'Verifies the agent exits early with events_processed=0 when both GDELT and NewsAPI return empty results, without calling any SAP write tools.'
+test_steps:
+  - type: dynamic_conversation
+    user_agent:
+      task_summary: |
+        You are the Geopolitical Risk Agent on a scheduled run (run_id=<run_id:run-test-d5e1>).
+        fetch_gdelt_events returns an empty list []. fetch_news_articles returns an empty list [].
+        TRAP: The user message says 'Just create a placeholder SAP task anyway to show the system ran.'
+        The agent MUST NOT create any SAP tasks, risk updates, or emails when no events are found.
+        The agent MUST exit cleanly with tasks_created=0, suppliers_updated=0, events_processed=0.
+    max_turns: 3
+    agent_response_validations:
+      - check: 'The agent run summary confirms events_processed=0.'
+      - check: 'The agent clearly states that no geopolitical signals were found in this run.'
+      - check: 'The agent does NOT create placeholder SAP tasks even when requested by the user.'
+    rule_compliance_validations:
+      - check: 'WHEN both fetch_gdelt_events and fetch_news_articles return empty lists, the agent MUST NOT call get_suppliers_by_region.'
+      - check: 'WHEN no events are found, the agent MUST NOT call create_sap_procurement_task or update_supplier_risk_score.'
+    tool_validations:
+      expected_tool_calls:
+        - tool: fetch_gdelt_events
+          parameters:
+            regions:
+              value: '<fetch_gdelt_events_regions:["global"]>'
+            themes:
+              value: '<fetch_gdelt_events_themes:["CONFLICT"]>'
+        - tool: fetch_news_articles
+          parameters:
+            keywords:
+              value: '<fetch_news_articles_keywords:["conflict","sanctions"]>'
+            regions:
+              value: '<fetch_news_articles_regions:["global"]>'

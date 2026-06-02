@@ -1,0 +1,19 @@
+{
+  "requires": {
+    "db": {
+      "[production]": {
+        "kind": "hana"
+      },
+      "[development]": {
+        "kind": "sqlite",
+        "credentials": { "url": ":memory:" }
+      }
+    }
+  },
+  "build": {
+    "tasks": [
+      { "for": "hana", "src": "db", "options": { "model": ["db", "srv"] } },
+      { "for": "nodejs", "src": "srv", "options": { "model": ["db", "srv"] } }
+    ]
+  }
+}

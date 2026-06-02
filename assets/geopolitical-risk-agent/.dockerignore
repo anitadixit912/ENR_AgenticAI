@@ -1,0 +1,28 @@
+# Test artifacts
+tests/
+prebuilt_tests/
+conftest.py
+pytest.ini
+requirements-test.txt
+test_report.json
+.coveragerc
+.coverage
+coverage.json
+.pytest_cache/
+aeval/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+
+# Environment / secrets
+.env
+
+# Development
+.gitignore
+README.md
+mcp-mock.json
+tools.json

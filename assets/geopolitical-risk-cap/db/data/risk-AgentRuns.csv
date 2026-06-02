@@ -1,0 +1,4 @@
+ID,runId,triggeredAt,completedAt,status,eventsProcessed,highCriticalCount,tasksCreated,suppliersUpdated,emailsSent,errorMessage
+bec555a3-0700-4fa7-aadc-2f447d04c0a4,run-001,2024-01-15T10:00:00Z,2024-01-15T10:05:00Z,COMPLETED,42,2,2,2,2,
+8651e618-d35c-458f-9aab-789077b0ce32,run-002,2024-01-17T14:00:00Z,2024-01-17T14:05:00Z,COMPLETED,38,2,2,2,1,
+9639cc65-5ef4-4ec2-b7d9-ae0f73392503,run-003,2024-01-19T08:00:00Z,2024-01-19T08:03:00Z,COMPLETED,15,0,0,0,0,
