@@ -13,6 +13,10 @@ components:
     outputPath: gen/srv
     provides:
       endpoints:
+        - path: /react-ui
+          port: 4004
+          protocol: http
+          visibleTo: public
         - path: /odata/v4
           port: 4004
           protocol: http

@@ -39,15 +39,20 @@ def main(host: str, port: int):
     # âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
 
     skill = AgentSkill(
-        id="{{AGENT_ID}}",
-        name="{{AGENT_NAME}}",
-        description="{{AGENT_SKILL_DESCRIPTION}}",
-        tags=["{{AGENT_TAGS}}"],
-        examples=["{{AGENT_EXAMPLES}}"],
+        id="geopolitical-risk-agent",
+        name="Geopolitical Risk Intelligence Agent",
+        description="Monitors real-time conflict signals from GDELT and NewsAPI, correlates them with SAP supplier and purchase-order data, scores supply-chain risk, and surfaces actionable alerts for procurement teams.",
+        tags=["geopolitical", "risk", "supply-chain", "intelligence", "procurement"],
+        examples=[
+            "Run a geopolitical risk scan for the Middle East and Eastern Europe",
+            "Which of our suppliers are at risk due to current conflict events?",
+            "Show me High and Critical risk events from the last 6 hours",
+            "Create SAP procurement tasks for all Critical severity events today",
+        ],
     )
     agent_card = AgentCard(
-        name="{{AGENT_NAME}}",
-        description="{{AGENT_CARD_DESCRIPTION}}",
+        name="Geopolitical Risk Intelligence Agent",
+        description="Real-time geopolitical risk intelligence agent. Integrates GDELT and NewsAPI conflict signals with SAP S/4HANA supplier and purchase-order data to score supply-chain disruption risk and trigger automated alerts and SAP tasks.",
         url=os.environ.get("AGENT_PUBLIC_URL", f"http://{host}:{port}/"),
         version="1.0.0",
         default_input_modes=["text", "text/plain"],

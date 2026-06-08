@@ -13,7 +13,7 @@
   },
   "scripts": {
     "start": "cds-serve",
-    "dev:cap": "cds watch",
+    "dev:cap": "cds watch --livereload false",
     "dev:ui": "npm --prefix ui run dev",
     "build": "cds build --production",
     "build:full": "npm --prefix ui run build && cds build --production",

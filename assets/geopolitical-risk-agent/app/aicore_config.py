@@ -72,7 +72,7 @@ def build_llm(temperature: float = 0.1):
             + "\n\nSet them in .env (local) or as Kubernetes secrets (BTP)."
         )
 
-    from litellm import ChatLiteLLM  # import here to avoid import-time side-effects
+    from langchain_litellm import ChatLiteLLM  # ChatLiteLLM lives in langchain_litellm, not litellm
 
     model = os.environ.get("AICORE_LLM_MODEL", "gpt-4o")
     logger.debug("Building ChatLiteLLM: model=%s, temperature=%s", model, temperature)
